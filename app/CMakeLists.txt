@@ -12,10 +12,6 @@ target_include_directories(${PROJECT_NAME} PRIVATE
     "include"
 )
 
-target_link_libraries(${PROJECT_NAME} PRIVATE
-    "${CMAKE_SOURCE_DIR}/../robocode/build/robocode.so"
-)
-
 target_compile_options(${PROJECT_NAME} PRIVATE
     -std=c++17
     -Wall

@@ -12,7 +12,7 @@ target_include_directories(${PROJECT_NAME} PRIVATE
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE
-    "${CMAKE_SOURCE_DIR}/../robocode/build/robocode.so"
+    "${CMAKE_SOURCE_DIR}/../robocode/build/robocode.a"
 )
 
 target_compile_options(${PROJECT_NAME} PRIVATE

@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.16)
 
 project(robocode)
 
-add_library(${PROJECT_NAME} SHARED
+add_library(${PROJECT_NAME} STATIC
     "src/Robot.cpp"
 )
 
@@ -15,6 +15,7 @@ target_compile_options(${PROJECT_NAME} PRIVATE
     -Wall
     -Wextra
     -Wpedantic
+    -fPIC
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "")
