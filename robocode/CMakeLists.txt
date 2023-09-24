@@ -4,6 +4,7 @@ project(robocode)
 
 add_library(${PROJECT_NAME} STATIC
     "src/Robot.cpp"
+    "src/Vector.cpp"
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE

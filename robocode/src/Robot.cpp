@@ -12,12 +12,8 @@ Robot::~Robot() {
     std::cout << "Robot dtor" << std::endl;
 }
 
-float Robot::getX() const {
-    return 0;
-}
-
-float Robot::getY() const {
-    return 0;
+Robot::State Robot::getState() const {
+    return State();
 }
 
 }
