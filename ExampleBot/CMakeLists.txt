@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.16)
 project(ExampleBot)
 
 add_library(${PROJECT_NAME} SHARED
-    "src/ExampleBot.cpp"
+    "ExampleBot.cpp"
 )
 
 target_include_directories(${PROJECT_NAME} PRIVATE

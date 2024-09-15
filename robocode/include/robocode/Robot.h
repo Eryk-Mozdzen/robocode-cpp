@@ -1,26 +1,22 @@
 #pragma once
 
+#include <memory>
+
 #include <robocode/Vector.h>
+
+#define ROBOCODE_REGISTER_ROBOT(name) \
+    extern "C" std::unique_ptr<robocode::Robot> create() { \
+        return std::make_unique<name>(); \
+    }
 
 namespace robocode {
 
 class Robot {
 public:
-    struct State {
-        Vector position;
-        float gunPosition;
-        float radarPosition;
-    };
-
     Robot();
     virtual ~Robot();
 
     virtual void run() = 0;
-
-    State getState() const;
-
-private:
-    State state;
 };
 
 }

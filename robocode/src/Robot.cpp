@@ -12,8 +12,4 @@ Robot::~Robot() {
     std::cout << "Robot dtor" << std::endl;
 }
 
-Robot::State Robot::getState() const {
-    return State();
-}
-
 }

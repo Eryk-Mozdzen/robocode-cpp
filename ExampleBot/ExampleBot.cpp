@@ -1,4 +1,3 @@
-#include <memory>
 #include <iostream>
 
 #include <robocode/Robot.h>
@@ -8,7 +7,7 @@ public:
     ExampleBot();
     ~ExampleBot();
 
-    void run() override;
+    void run();
 };
 
 ExampleBot::ExampleBot() {
@@ -23,6 +22,4 @@ void ExampleBot::run() {
 
 }
 
-extern "C" std::unique_ptr<robocode::Robot> create() {
-    return std::make_unique<ExampleBot>();
-}
+ROBOCODE_REGISTER_ROBOT(ExampleBot)
