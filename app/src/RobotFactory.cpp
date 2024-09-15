@@ -2,10 +2,6 @@
 #include <iostream>
 #include <dlfcn.h>
 
-RobotFactory::RobotFactory() : handle{nullptr}, factory{nullptr} {
-
-}
-
 RobotFactory::RobotFactory(const std::string &path) {
     handle = dlopen(path.c_str(), RTLD_LAZY);
 

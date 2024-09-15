@@ -1,14 +1,11 @@
-#include <map>
-#include <vector>
-#include <memory>
+#include <QApplication>
+#include "MainWindow.h"
 
-#include <robocode/Robot.h>
-#include "RobotFactory.h"
+int main(int argc, char *argv[]) {
+    QApplication app(argc, argv);
 
-int main() {
-    std::map<std::string, RobotFactory> factories;
-    factories.insert(std::make_pair("ExampleBot", "../../ExampleBot/build/ExampleBot.so"));
+	MainWindow window;
+ 	window.show();
 
-    std::vector<std::unique_ptr<robocode::Robot>> robots;
-    robots.push_back(factories["ExampleBot"].create());
+	return app.exec();
 }

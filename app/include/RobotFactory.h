@@ -12,7 +12,6 @@ class RobotFactory {
     Factory factory;
 
 public:
-    RobotFactory();
     RobotFactory(const std::string &path);
     ~RobotFactory();
 
