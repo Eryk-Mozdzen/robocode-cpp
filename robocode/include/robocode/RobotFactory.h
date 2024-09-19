@@ -5,6 +5,8 @@
 
 #include <robocode/Robot.h>
 
+namespace robocode {
+
 class RobotFactory {
     using Factory = std::unique_ptr<robocode::Robot> (*)();
 
@@ -13,7 +15,14 @@ class RobotFactory {
 
 public:
     RobotFactory(const std::string &path);
+    RobotFactory(const RobotFactory &) = delete;
+    RobotFactory(RobotFactory &&other);
     ~RobotFactory();
+
+    RobotFactory &operator=(const RobotFactory &) = delete;
+    RobotFactory & operator=(RobotFactory &&other);
 
     std::unique_ptr<robocode::Robot> create() const;
 };
+
+}

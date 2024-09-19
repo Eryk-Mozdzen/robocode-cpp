@@ -2,7 +2,7 @@
 
 #include <memory>
 
-#include <robocode/Vector.h>
+#include <robocode/Thread.h>
 
 #define ROBOCODE_REGISTER_ROBOT(name) \
     extern "C" std::unique_ptr<robocode::Robot> create() { \
@@ -12,6 +12,10 @@
 namespace robocode {
 
 class Robot {
+    Thread<Robot> thread;
+
+    friend class Engine;
+
 public:
     Robot();
     virtual ~Robot();

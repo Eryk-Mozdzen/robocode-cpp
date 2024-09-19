@@ -19,7 +19,7 @@ ExampleBot::~ExampleBot() {
 }
 
 void ExampleBot::run() {
-
+    std::cout << "ExampleBot run" << std::endl;
 }
 
 ROBOCODE_REGISTER_ROBOT(ExampleBot)

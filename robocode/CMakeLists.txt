@@ -4,6 +4,8 @@ project(robocode)
 
 add_library(${PROJECT_NAME} STATIC
     "src/Robot.cpp"
+    "src/RobotFactory.cpp"
+    "src/Engine.cpp"
     "src/Vector.cpp"
 )
 
