@@ -10,7 +10,7 @@ namespace robocode {
 
     }
 
-    Vector::Vector(const float x, const float y) : x{x}, y{y} {
+    Vector::Vector(const double x, const double y) : x{x}, y{y} {
 
     }
 
@@ -22,15 +22,15 @@ namespace robocode {
         return Vector(x-other.x, y-other.y);
     }
 
-    float Vector::operator*(const Vector &other) const {
+    double Vector::operator*(const Vector &other) const {
         return x*other.x + y*other.y;
     }
 
-    Vector Vector::operator*(const float num) const {
+    Vector Vector::operator*(const double num) const {
         return Vector(x*num, y*num);
     }
 
-    Vector Vector::operator/(const float num) const {
+    Vector Vector::operator/(const double num) const {
         return Vector(x/num, y/num);
     }
 
@@ -44,12 +44,12 @@ namespace robocode {
         y -=other.y;
     }
 
-    void Vector::operator*=(const float num) {
+    void Vector::operator*=(const double num) {
         x *=num;
         y *=num;
     }
 
-    void Vector::operator/=(const float num) {
+    void Vector::operator/=(const double num) {
         x /=num;
         y /=num;
     }
@@ -58,11 +58,16 @@ namespace robocode {
         return std::sqrt(x*x + y*y);
     }
 
-    Vector operator*(const float num, const Vector &vec) {
+    Vector operator*(const double num, const Vector &vec) {
         return Vector(num*vec.x, num*vec.y);
     }
 
-    Vector operator/(const float num, const Vector &vec) {
+    Vector operator/(const double num, const Vector &vec) {
         return Vector(vec.x/num, vec.y/num);
+    }
+
+    std::ostream & operator<<(std::ostream &stream, const Vector &vec) {
+        stream << vec.x << " " << vec.y;
+        return stream;
     }
 }

@@ -19,7 +19,9 @@ ExampleBot::~ExampleBot() {
 }
 
 void ExampleBot::run() {
-    std::cout << "ExampleBot run" << std::endl;
+    setTracksVelocities(1, 0.5);
+
+    std::cout << "ExampleBot run " << getPosition() << std::endl;
 }
 
 ROBOCODE_REGISTER_ROBOT(ExampleBot)
